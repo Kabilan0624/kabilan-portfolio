@@ -326,13 +326,15 @@ export const portfolioContent = {
       category: "Reading & Media",
       badge: "Reading & Video Modules",
       overview: "A Bible content application with reading plans and vertical video experiences.",
-     myContributions: [
-      "Maintained and enhanced existing Flutter modules developed by a previous developer",
-      "Identified and resolved bugs in the existing video reels player",
-      "Fixed issues in reading-plan navigation and daily reading checklists",
-      "Troubleshot scheduled notification and reminder issues",
-      "Improved existing module stability and resolved functional issues",
-    ],
+    myContributions: [
+  "Developed the vertical video reels module with play/pause and interaction controls",
+  "Implemented reading-plan navigation and day-by-day reading checklists",
+  "Worked on scheduled daily reading reminders and resolved notification issues",
+  "Fixed bugs across multiple existing modules inherited from the previous developer",
+  "Troubleshot and resolved functional issues across the application",
+  "Improved application stability and prepared the app for production release",
+  "Released the updated application to production",
+],
       technologies: ["GetX", "Video Player", "Flutter", "Dart"],
       screenshots: [
         { url: "/screenshots/bible-app/reels-video-player.png", title: "Vertical Video Reels Player" },
