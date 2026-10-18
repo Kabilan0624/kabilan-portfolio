@@ -368,21 +368,7 @@ export const portfolioContent = {
           "Performed testing, bug fixing, and performance optimization to improve app stability.",
         ],
         technologies: ["Flutter", "Dart", "REST API", "Riverpod", "StreamBuilder", "JSON", "Git"],
-      },
-      {
-        role: "Machine Learning Intern",
-        company: "TechVolt Software Pvt Ltd",
-        location: "Coimbatore",
-        period: "July 2023",
-        description: "Developed hybrid predictive modeling systems for Electric Vehicle telemetry and remaining useful life estimation.",
-        bullets: [
-          "Developed a hybrid predictive model for Remaining Useful Life (RUL) of Electric Vehicles (EVs) using XGBoost and Random Forest.",
-          "Collected, pre-processed, and analysed time-series sensor data for predictive modeling.",
-          "Evaluated model performance, optimized parameters, and implemented feature engineering to improve accuracy.",
-          "Gained hands-on experience with Python libraries for machine learning, data analysis, and visualization.",
-        ],
-        technologies: ["Python", "XGBoost", "Random Forest", "Scikit-learn", "Pandas", "NumPy"],
-      },
+      }
     ],
     education: {
       degree: "B.Tech, Artificial Intelligence and Data Science",
