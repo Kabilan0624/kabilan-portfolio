@@ -28,11 +28,11 @@ export const portfolioContent = {
 
   // Personal Info & Hero Section
   personal: {
-    name: "Kabilan R",
-    eyebrow: "FLUTTER DEVELOPER",
+    name: "Kabilan",
+    eyebrow: "Flutter Developer",
     headlineLine1: "Hi, I'm Kabilan R.",
-    headlineLine2: "I Build Mobile Apps with Flutter.",
-    intro: "Motivated Flutter Developer who enjoys building clean, responsive mobile apps with solid architecture and smooth user experiences. Experienced with REST APIs, state management, local storage, and UI performance optimization to create reliable and user-friendly applications.",
+    headlineLine2: "Flutter Developer | Cross-Platform Mobile Apps",
+    intro: "I'm a Flutter Developer focused on building responsive mobile applications with Flutter and Dart. I work with REST API integration, state management, and local and cloud data storage to deliver smooth, reliable user experiences.",
     primaryCta: "Explore My Work",
     secondaryCta: "Get In Touch",
     
@@ -112,12 +112,12 @@ export const portfolioContent = {
   about: {
     heading: "About Me",
     eyebrow: "BACKGROUND & PHILOSOPHY",
-    copy: "I'm a Flutter Developer and B.Tech graduate in Artificial Intelligence & Data Science from Jai Shriram Engineering College. Currently developing cross-platform mobile apps as a Flutter Mobile Developer Intern at Skyraan Technologies, I focus on responsive UI development, clean architecture, REST API integration, and predictable state management. With a strong engineering foundation across mobile architecture and machine learning models, I build reliable, production-ready applications with smooth user experiences.",
+    copy: "I'm a Flutter Developer and a B.Tech graduate in Artificial Intelligence and Data Science from Jai Shriram Engineering College. At Skyraan Technologies, I work on cross-platform mobile applications, focusing on UI development, REST API integration, state management, and feature implementation. My academic background has also given me exposure to machine learning and computer vision.",
     highlights: [
-      "Specialized in cross-platform mobile architecture with Flutter & Dart",
-      "Hands-on experience with diverse state management patterns (Riverpod, StreamBuilder, GetX, Provider)",
-      "Engineered real-time chat, Text-to-Speech audio players, and vertical video reels",
-      "B.Tech in Artificial Intelligence & Data Science (CGPA: 8.37) with ML modeling experience",
+      "Hands-on experience building Flutter applications with Dart.",
+      "Experience with Riverpod, Provider, StreamBuilder, and GetX.",
+      "Worked on chat, text-to-speech playback, and vertical video features.",
+      "B.Tech in Artificial Intelligence and Data Science — CGPA 8.37.",
     ],
   },
 
@@ -134,8 +134,8 @@ export const portfolioContent = {
         isPrimary: true,
         skills: [
           { name: "Dart", level: 3 }, // 3 = Strong
-          { name: "Python", level: 3 },
-          { name: "C", level: 2 },    // 2 = Working
+          { name: "Python", level: 2 },
+          { name: "C", level: 1 },    // 2 = Working
         ],
       },
       {
@@ -185,17 +185,18 @@ export const portfolioContent = {
           { name: "VS Code", level: 3 },
           { name: "Git", level: 2 },
         ],
-      },
-      {
-        name: "Analytical Tools",
-        description: "Reporting and data exploration",
-        icon: "BarChart3",
-        isPrimary: false,
-        skills: [
-          { name: "Excel", level: 3 },
-          { name: "Power BI", level: 2 },
-        ],
-      },
+      }
+      // ,
+      // {
+      //   name: "Analytical Tools",
+      //   description: "Reporting and data exploration",
+      //   icon: "BarChart3",
+      //   isPrimary: false,
+      //   skills: [
+      //     { name: "Excel", level: 3 },
+      //     { name: "Power BI", level: 2 },
+      //   ],
+      // },
     ],
   },
 
@@ -207,12 +208,14 @@ export const portfolioContent = {
       category: "Healthcare & Education",
       badge: "Educational Mobile App",
       overview: "An educational medical application for browsing disease information and related learning content.",
-      myContributions: [
-        "Disease categories, search, and filtering interfaces",
-        "Educational video content with vertical reels-style scrolling",
-        "Text-to-speech audio playback and speed controls",
-        "Bookmark functionality for saved diseases, videos, or personal notes",
-      ],
+     myContributions: [
+          "Developed the complete Flutter application from UI implementation to feature integration",
+          "Built disease categories, search, and filtering functionality",
+          "Implemented educational video browsing with vertical reels-style scrolling",
+          "Integrated text-to-speech playback with audio speed controls",
+          "Developed bookmarking functionality for saving and accessing content",
+          "Integrated REST APIs and managed application state and data rendering",
+        ],
       technologies: ["StreamBuilder", "REST API", "Flutter", "Dart"],
       screenshots: [
         { url: "/screenshots/disease-dictionary/01-medical-trivia-home.png", title: "Daily Health Trivia & Categories" },
@@ -230,12 +233,13 @@ export const portfolioContent = {
       category: "Agriculture & Education",
       badge: "Equipment Encyclopedia",
       overview: "A machinery information and learning application for exploring equipment categories and specifications.",
-      myContributions: [
-        "Machinery categories and equipment details",
-        "Equipment specification screens",
-        "Text-to-speech playback controls",
-        "Vertical video browsing",
-        "Bookmark / favourites features",
+            myContributions: [
+        "Developed the complete Flutter application for exploring agricultural machinery and equipment",
+        "Built machinery categories and detailed equipment information screens",
+        "Implemented equipment specifications and text-to-speech functionality",
+        "Developed vertical video browsing for agricultural machinery content",
+        "Implemented bookmarking and favourites functionality",
+        "Integrated REST APIs and managed application state and data rendering",
       ],
       technologies: ["Riverpod", "REST API", "Flutter", "Dart"],
       screenshots: [
@@ -255,11 +259,14 @@ export const portfolioContent = {
       badge: "School Management Platform",
       overview: "A school-focused application supporting teacher and student workflows, classroom management, and academic activities.",
       myContributions: [
-        "Teacher/student role selection and onboarding flow",
-        "Classroom chat and unread-message indicators",
-        "Attendance marking interface",
-        "Class management and student onboarding",
-        "Quizzes, assignments, study materials, and notifications",
+        "Developed teacher and student onboarding flows with role-based navigation",
+        "Implemented classroom group chat using Firebase Firestore",
+        "Built unread-message tracking and chat message management",
+        "Developed attendance management for marking student presence",
+        "Implemented class management and student onboarding features",
+        "Built quizzes, assignments, and study material modules",
+        "Integrated push notifications using Firebase Cloud Messaging",
+        "Integrated REST APIs and managed application state using Riverpod",
       ],
       technologies: ["Riverpod", "Firebase Firestore", "Firebase Realtime DB", "Flutter"],
       screenshots: [
@@ -300,11 +307,15 @@ export const portfolioContent = {
       category: "Field Data Collection",
       badge: "In Active Development",
       overview: "A field data collection application for recording and managing member or voter-related information.",
-      myContributions: [
-        "Structured data-entry forms and input validation",
-        "Geographic area selection",
-        "Field verification and summary views",
-      ],
+     myContributions: [
+      "Developed multi-step member registration forms with input validation",
+      "Implemented dynamic dropdowns for district, assembly, panchayat, village, ward, and booth selection",
+      "Integrated member profile photo upload and member details submission",
+      "Built field verification and member summary views",
+      "Implemented paginated geographic data loading and dropdown management",
+      "Managed form state and validation using Riverpod",
+      "Integrated REST APIs using Dio for member registration and data retrieval",
+    ],
       technologies: ["Riverpod", "Form Validation", "Flutter", "Dart"],
       screenshots: [], // No screenshots available (in development)
       inDevelopment: true,
@@ -315,12 +326,13 @@ export const portfolioContent = {
       category: "Reading & Media",
       badge: "Reading & Video Modules",
       overview: "A Bible content application with reading plans and vertical video experiences.",
-      myContributions: [
-        "Vertical video reels player with play/pause and interaction controls",
-        "Reading-plan catalogue organized by timeline",
-        "Day-by-day reading plan navigation and checklists",
-        "Daily reading reminders with scheduled notifications",
-      ],
+     myContributions: [
+      "Maintained and enhanced existing Flutter modules developed by a previous developer",
+      "Identified and resolved bugs in the existing video reels player",
+      "Fixed issues in reading-plan navigation and daily reading checklists",
+      "Troubleshot scheduled notification and reminder issues",
+      "Improved existing module stability and resolved functional issues",
+    ],
       technologies: ["GetX", "Video Player", "Flutter", "Dart"],
       screenshots: [
         { url: "/screenshots/bible-app/reels-video-player.png", title: "Vertical Video Reels Player" },
@@ -336,12 +348,13 @@ export const portfolioContent = {
       category: "Administration / Community",
       badge: "In Active Development",
       overview: "A mobile application concept or product for managing member records, events, and administrative workflows.",
-      myContributions: [
-        "Member and family directory interface",
-        "Events and announcements feeds",
-        "Attendance-related workflows",
-        "Prayer-request or pastoral-care records",
-      ],
+    myContributions: [
+      "Developing member and family directory management features",
+      "Building events and announcements feeds",
+      "Implementing attendance-related workflows",
+      "Working on prayer-request and pastoral-care record management",
+      "Integrating APIs and managing application state using Riverpod",
+    ],
       technologies: ["Riverpod", "StateNotifier", "Flutter", "Dart"],
       screenshots: [], // In development
       inDevelopment: true,
@@ -355,18 +368,21 @@ export const portfolioContent = {
     intro: "Hands-on engineering experience in Flutter mobile application development, production features, and machine learning models.",
     items: [
       {
-        role: "Flutter Mobile App Developer Intern",
+        role: "Flutter Mobile App Developer",
         company: "Skyraan Technologies",
         location: "Coimbatore",
-        period: "May 2024 – Present",
-        description: "Developing cross-platform mobile applications using Flutter. Completed full project modules from UI design to API integration, and currently contributing to active production projects.",
-        bullets: [
-          "Developing cross-platform mobile applications using Flutter and Dart.",
-          "Completed one full project involving UI design, API integration, and state management.",
-          "Currently contributing to an active production project with feature implementation and UI improvements.",
-          "Integrated REST APIs, handled JSON data, and implemented authentication flows.",
-          "Performed testing, bug fixing, and performance optimization to improve app stability.",
-        ],
+        period: "May 2025 – Present",
+        description: "Contributing to Flutter mobile application development, from responsive UI implementation to API integration and state management.",
+     bullets: [
+      "Developing and maintaining cross-platform mobile applications using Flutter and Dart.",
+      "Developed complete application features, including UI implementation, API integration, and state management.",
+      "Contributing to multiple production projects by implementing new features and improving existing modules.",
+      "Integrating REST APIs using Dio and handling JSON data with proper model structures.",
+      "Managing application state using Riverpod and implementing responsive, reusable UI components.",
+      "Integrating Firebase services, including Firestore for real-time classroom chat functionality.",
+      "Troubleshooting legacy code, fixing bugs, and improving application stability.",
+      "Collaborating on ongoing projects, maintaining existing features, and resolving functional issues."
+    ],
         technologies: ["Flutter", "Dart", "REST API", "Riverpod", "StreamBuilder", "JSON", "Git"],
       }
     ],
