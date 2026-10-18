@@ -207,6 +207,7 @@ export const portfolioContent = {
       title: "Disease Dictionary",
       category: "Healthcare & Education",
       badge: "Educational Mobile App",
+      caseStudyUrl: "https://github.com/Kabilan0624/disease-dictionary-case-study",
       overview: "An educational medical application for browsing disease information and related learning content.",
      myContributions: [
           "Developed the complete Flutter application from UI implementation to feature integration",

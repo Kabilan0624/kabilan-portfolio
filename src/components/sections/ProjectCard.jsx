@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import Badge from '../ui/Badge';
 import Button from '../ui/Button';
+import { Github } from '../ui/Icons';
 
 export default function ProjectCard({ project, index, onOpenScreenshots }) {
   const hasScreenshots = project.screenshots && project.screenshots.length > 0;
@@ -308,23 +309,40 @@ export default function ProjectCard({ project, index, onOpenScreenshots }) {
               ))}
             </div>
 
-            {/* Primary Action Button */}
-            {hasScreenshots ? (
-              <Button
-                variant="primary"
-                size="md"
-                onClick={() => onOpenScreenshots(project)}
-                icon={ArrowUpRight}
-                iconPosition="right"
-                className="shrink-0"
-              >
-                Explore Screenshots ({project.screenshots.length})
-              </Button>
-            ) : (
-              <span className="text-xs font-mono text-textMuted italic shrink-0">
-                In Active Development
-              </span>
-            )}
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3">
+              {project.caseStudyUrl && (
+                <Button
+                  variant="secondary"
+                  size="md"
+                  href={project.caseStudyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  icon={Github}
+                  iconPosition="left"
+                  className="shrink-0"
+                >
+                  Case Study
+                </Button>
+              )}
+
+              {hasScreenshots ? (
+                <Button
+                  variant="primary"
+                  size="md"
+                  onClick={() => onOpenScreenshots(project)}
+                  icon={ArrowUpRight}
+                  iconPosition="right"
+                  className="shrink-0"
+                >
+                  Explore Screenshots ({project.screenshots.length})
+                </Button>
+              ) : (
+                <span className="text-xs font-mono text-textMuted italic shrink-0">
+                  In Active Development
+                </span>
+              )}
+            </div>
 
           </div>
 
