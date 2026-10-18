@@ -259,6 +259,7 @@ export const portfolioContent = {
       title: "Teachraan — School ERP & Classroom Management",
       category: "Education & Administration",
       badge: "School Management Platform",
+      caseStudyUrl: "https://github.com/Kabilan0624/teachraan-erp-case-study",
       overview: "A school-focused application supporting teacher and student workflows, classroom management, and academic activities.",
       myContributions: [
         "Developed teacher and student onboarding flows with role-based navigation",
