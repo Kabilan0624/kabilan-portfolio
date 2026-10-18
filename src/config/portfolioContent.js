@@ -329,6 +329,7 @@ export const portfolioContent = {
       title: "Bible App (Bible Lite)",
       category: "Reading & Media",
       badge: "Reading & Video Modules",
+      caseStudyUrl: "https://github.com/Kabilan0624/bible-app-case-study",
       overview: "A Bible content application with reading plans and vertical video experiences.",
     myContributions: [
   "Developed the vertical video reels module with play/pause and interaction controls",
