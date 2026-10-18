@@ -18,6 +18,10 @@ export default function ProjectCard({ project, index, onOpenScreenshots }) {
   const hasScreenshots = project.screenshots && project.screenshots.length > 0;
   const [activeScreenIndex, setActiveScreenIndex] = useState(0);
 
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [touchEndX, setTouchEndX] = useState(null);
+  const [hasMoved, setHasMoved] = useState(false);
+
   const isEven = index % 2 === 0;
   const currentScreen = hasScreenshots ? project.screenshots[activeScreenIndex] : null;
 
@@ -33,6 +37,37 @@ export default function ProjectCard({ project, index, onOpenScreenshots }) {
     setActiveScreenIndex((prev) => (prev - 1 + project.screenshots.length) % project.screenshots.length);
   };
 
+  const handleTouchStart = (e) => {
+    setTouchEndX(null);
+    setTouchStartX(e.targetTouches[0].clientX);
+    setHasMoved(false);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+    if (touchStartX && Math.abs(e.targetTouches[0].clientX - touchStartX) > 10) {
+      setHasMoved(true);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX || !touchEndX) return;
+    const distance = touchStartX - touchEndX;
+    const minDistance = 35;
+    if (distance > minDistance) {
+      // Swiped Left -> Next screen
+      setActiveScreenIndex((prev) => (prev + 1) % project.screenshots.length);
+    } else if (distance < -minDistance) {
+      // Swiped Right -> Prev screen
+      setActiveScreenIndex((prev) => (prev - 1 + project.screenshots.length) % project.screenshots.length);
+    }
+  };
+
+  const handlePhoneClick = () => {
+    if (hasMoved) return; // If swiping, don't open modal
+    onOpenScreenshots(project);
+  };
+
   return (
     <div className="bg-surface/80 hover:bg-surface border border-borderDark hover:border-accent/50 rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-300 shadow-sm hover:shadow-card-dark relative overflow-hidden group">
       
@@ -42,18 +77,21 @@ export default function ProjectCard({ project, index, onOpenScreenshots }) {
       <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-12 items-center`}>
         
         {/* =========================================================================
-            PHONE MOCKUP PREVIEW WITH INTERACTIVE SCREEN SWITCHING
+            PHONE MOCKUP PREVIEW WITH TOUCH SWIPE & SCREEN SWITCHING
            ========================================================================= */}
         <div className="w-full lg:w-5/12 flex flex-col items-center shrink-0">
           
           {hasScreenshots ? (
             <div className="w-full max-w-[280px] sm:max-w-[300px] flex flex-col items-center">
               
-              {/* Phone Frame */}
+              {/* Phone Frame with Touch Swipe */}
               <div 
-                onClick={() => onOpenScreenshots(project)}
-                className="relative w-full aspect-[9/18.5] rounded-[40px] p-2.5 bg-[#10121A] border-4 border-[#25293A] shadow-2xl flex flex-col items-center cursor-pointer group/device transition-transform duration-300 hover:scale-[1.02]"
-                title="Click to view fullscreen gallery"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+                onClick={handlePhoneClick}
+                className="relative w-full aspect-[9/18.5] rounded-[40px] p-2.5 bg-[#10121A] border-4 border-[#25293A] shadow-2xl flex flex-col items-center cursor-pointer group/device transition-transform duration-300 hover:scale-[1.02] select-none"
+                title="Swipe left/right to browse screens, or click to open full gallery"
               >
                 {/* Dynamic Island Notch */}
                 <div className="w-24 h-4 bg-black rounded-full mb-1.5 flex items-center justify-center z-20 shrink-0">
@@ -67,36 +105,39 @@ export default function ProjectCard({ project, index, onOpenScreenshots }) {
                     key={activeScreenIndex}
                     src={currentScreen.url}
                     alt={currentScreen.title}
-                    className="w-full h-full object-cover object-top animate-in fade-in duration-300"
+                    className="w-full h-full object-cover object-top animate-in fade-in duration-300 pointer-events-none"
                     loading="lazy"
                   />
 
-                  {/* Glossy Reflection Gradient */}
-                  {/* <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none" /> */}
+                  {/* Dedicated Fullscreen Button */}
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onOpenScreenshots(project);
+                    }}
+                    className="absolute top-2.5 right-2.5 p-1.5 rounded-full bg-black/70 hover:bg-black text-white/80 hover:text-white transition-all z-20 border border-white/10"
+                    title="Open Fullscreen Gallery"
+                    aria-label="Open Fullscreen Gallery"
+                  >
+                    <Maximize2 className="w-3.5 h-3.5" />
+                  </button>
 
-                  {/* Hover Expand Overlay */}
-                  {/* <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover/device:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2">
-                    <span className="p-3 rounded-full bg-accent text-white shadow-glow-orange-sm">
-                      <Maximize2 className="w-5 h-5" />
-                    </span>
-                    <span className="text-xs font-semibold text-white">
-                      Fullscreen Lightbox
-                    </span>
-                  </div> */}
-
-                  {/* In-Frame Left/Right Arrow Controls */}
+                  {/* In-Frame Left/Right Arrow Controls (Always visible on mobile touchscreens!) */}
                   {project.screenshots.length > 1 && (
                     <>
                       <button
+                        type="button"
                         onClick={prevScreen}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/60 text-white/80 hover:text-white hover:bg-black/90 transition-all opacity-0 group-hover/device:opacity-100"
+                        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/80 hover:bg-black text-white flex items-center justify-center transition-all z-20 border border-white/15 opacity-90 sm:opacity-0 sm:group-hover/device:opacity-100 shadow-lg"
                         aria-label="Previous screen"
                       >
                         <ChevronLeft className="w-4 h-4" />
                       </button>
                       <button
+                        type="button"
                         onClick={nextScreen}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/60 text-white/80 hover:text-white hover:bg-black/90 transition-all opacity-0 group-hover/device:opacity-100"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/80 hover:bg-black text-white flex items-center justify-center transition-all z-20 border border-white/15 opacity-90 sm:opacity-0 sm:group-hover/device:opacity-100 shadow-lg"
                         aria-label="Next screen"
                       >
                         <ChevronRight className="w-4 h-4" />
@@ -109,26 +150,38 @@ export default function ProjectCard({ project, index, onOpenScreenshots }) {
                 <div className="w-24 h-1 bg-white/20 rounded-full my-1.5 shrink-0" />
               </div>
 
-              {/* Screen Title Caption & Mini Thumbnails Strip */}
-              <div className="mt-4 w-full text-center">
-                <div className="text-xs font-medium text-textPrimary truncate mb-2">
+              {/* Screen Title Caption & Controls */}
+              <div className="mt-3.5 w-full text-center">
+                <div className="text-xs font-semibold text-textPrimary truncate mb-1">
                   {currentScreen.title}
                 </div>
 
-                {/* Interactive Screen Dots / Thumbnails */}
-                <div className="flex items-center justify-center gap-1.5">
+                {/* Screen Counter & Swipe Prompt for Mobile */}
+                <div className="text-[11px] font-mono text-textMuted flex items-center justify-center gap-1.5 mb-2.5">
+                  <span className="text-textSecondary">{activeScreenIndex + 1} of {project.screenshots.length}</span>
+                  <span className="text-accent/90 sm:hidden">• Swipe or tap arrows</span>
+                </div>
+
+                {/* Horizontal Scrollable Mini-Thumbnails Strip */}
+                <div className="flex items-center gap-1.5 overflow-x-auto py-1 px-1 max-w-full no-scrollbar justify-start sm:justify-center">
                   {project.screenshots.map((s, idx) => (
                     <button
                       key={idx}
-                      onClick={() => setActiveScreenIndex(idx)}
-                      className={`h-1.5 rounded-full transition-all duration-300 ${
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveScreenIndex(idx);
+                      }}
+                      className={`shrink-0 w-8 h-12 rounded-md overflow-hidden border transition-all ${
                         idx === activeScreenIndex 
-                          ? 'w-6 bg-accent shadow-[0_0_8px_#FF5E1E]' 
-                          : 'w-2 bg-borderDark hover:bg-textSecondary'
+                          ? 'border-accent shadow-[0_0_8px_rgba(255,94,30,0.6)] scale-105' 
+                          : 'border-borderDark/60 opacity-50 hover:opacity-100'
                       }`}
                       title={s.title}
-                      aria-label={`Go to screen ${idx + 1}`}
-                    />
+                      aria-label={`Jump to screen ${idx + 1}`}
+                    >
+                      <img src={s.url} alt={s.title} className="w-full h-full object-cover object-top" loading="lazy" />
+                    </button>
                   ))}
                 </div>
               </div>

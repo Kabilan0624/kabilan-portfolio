@@ -19,8 +19,8 @@ export default function About() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Photo & Stats Card */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
+          {/* Left Column: Photo & Stats Card (order-1 on mobile so image shows first) */}
+          <div className="lg:col-span-5 order-1 lg:order-1">
             <div className="relative group max-w-md mx-auto">
               
               {/* Subtle orange border glow */}
@@ -40,7 +40,7 @@ export default function About() {
           </div>
 
           {/* Right Column: Bio Narrative & Engineering Tenets */}
-          <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
+          <div className="lg:col-span-7 order-2 lg:order-2 space-y-6">
             
             <Card className="bg-surface/60 border-borderDark p-8">
               <p className="text-base sm:text-lg text-textPrimary leading-relaxed font-normal mb-6">
