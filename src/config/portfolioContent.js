@@ -45,7 +45,7 @@ export const portfolioContent = {
     email: "kabilanr244@gmail.com",
     phone: "+91 6383828085",
     github: "https://github.com/Kabilan0624",
-    linkedin: "https://linkedin.com/in/kabilan-r",
+    linkedin: "https://www.linkedin.com/in/kabilan-r-91432b268",
     location: "Tirupur, Tamil Nadu, India - 641605",
     resumeUrl: "/docs/kabilan-resume.pdf",
     hasRealResume: true,
