@@ -233,6 +233,7 @@ export const portfolioContent = {
       title: "Agriculture Machinery App",
       category: "Agriculture & Education",
       badge: "Equipment Encyclopedia",
+      caseStudyUrl: "https://github.com/Kabilan0624/agriculture-machinery-case-study",
       overview: "A machinery information and learning application for exploring equipment categories and specifications.",
             myContributions: [
         "Developed the complete Flutter application for exploring agricultural machinery and equipment",
