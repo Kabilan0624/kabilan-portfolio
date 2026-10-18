@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="flutterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#47C5FB" />
+      <stop offset="100%" stop-color="#02569B" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF753A" />
+      <stop offset="100%" stop-color="#FF5E1E" />
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="24" fill="#161822" stroke="#262938" stroke-width="2"/>
+  <!-- Flutter-style geometric chevron marks -->
+  <path d="M52 22 L24 50 L38 64 L80 22 Z" fill="url(#flutterGrad)"/>
+  <path d="M52 50 L38 64 L52 78 L66 64 Z" fill="#0175C2" opacity="0.8"/>
+  <path d="M52 78 L66 64 L80 78 L66 92 Z" fill="url(#orangeGrad)"/>
+</svg>
