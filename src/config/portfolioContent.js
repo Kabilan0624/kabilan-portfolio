@@ -288,6 +288,7 @@ export const portfolioContent = {
       title: "Bible Quiz App",
       category: "Learning & Quiz",
       badge: "Timed Quiz Engine",
+      caseStudyUrl: "https://github.com/Kabilan0624/bible-quiz-app-case-study",
       overview: "A quiz application with scheduled quiz availability, timed attempts, and score review.",
       myContributions: [
         "Scheduled quiz availability flow",
