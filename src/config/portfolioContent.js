@@ -44,7 +44,7 @@ export const portfolioContent = {
     // Social & Professional Links from Resume
     email: "kabilanr244@gmail.com",
     phone: "+91 6383828085",
-    github: "https://github.com/Kabilan0624",
+    github: "https://github.com/KabilanR-Dev",
     linkedin: "https://www.linkedin.com/in/kabilan-r-91432b268",
     location: "Tirupur, Tamil Nadu, India - 641605",
     resumeUrl: "/docs/kabilan-resume.pdf",
@@ -207,7 +207,7 @@ export const portfolioContent = {
       title: "Disease Dictionary",
       category: "Healthcare & Education",
       badge: "Educational Mobile App",
-      caseStudyUrl: "https://github.com/Kabilan0624/disease-dictionary-case-study",
+      caseStudyUrl: "https://github.com/KabilanR-Dev/disease-dictionary-case-study",
       overview: "An educational medical application for browsing disease information and related learning content.",
      myContributions: [
           "Developed the complete Flutter application from UI implementation to feature integration",
@@ -233,7 +233,7 @@ export const portfolioContent = {
       title: "Agriculture Machinery App",
       category: "Agriculture & Education",
       badge: "Equipment Encyclopedia",
-      caseStudyUrl: "https://github.com/Kabilan0624/agriculture-machinery-case-study",
+      caseStudyUrl: "https://github.com/KabilanR-Dev/agriculture-machinery-case-study",
       overview: "A machinery information and learning application for exploring equipment categories and specifications.",
             myContributions: [
         "Developed the complete Flutter application for exploring agricultural machinery and equipment",
@@ -259,7 +259,7 @@ export const portfolioContent = {
       title: "Teachraan — School ERP & Classroom Management",
       category: "Education & Administration",
       badge: "School Management Platform",
-      caseStudyUrl: "https://github.com/Kabilan0624/teachraan-erp-case-study",
+      caseStudyUrl: "https://github.com/KabilanR-Dev/teachraan-erp-case-study",
       overview: "A school-focused application supporting teacher and student workflows, classroom management, and academic activities.",
       myContributions: [
         "Developed teacher and student onboarding flows with role-based navigation",
@@ -288,7 +288,7 @@ export const portfolioContent = {
       title: "Bible Quiz App",
       category: "Learning & Quiz",
       badge: "Timed Quiz Engine",
-      caseStudyUrl: "https://github.com/Kabilan0624/bible-quiz-app-case-study",
+      caseStudyUrl: "https://github.com/KabilanR-Dev/bible-quiz-app-case-study",
       overview: "A quiz application with scheduled quiz availability, timed attempts, and score review.",
       myContributions: [
         "Scheduled quiz availability flow",
@@ -329,7 +329,7 @@ export const portfolioContent = {
       title: "Bible App (Bible Lite)",
       category: "Reading & Media",
       badge: "Reading & Video Modules",
-      caseStudyUrl: "https://github.com/Kabilan0624/bible-app-case-study",
+      caseStudyUrl: "https://github.com/KabilanR-Dev/bible-app-case-study",
       overview: "A Bible content application with reading plans and vertical video experiences.",
     myContributions: [
   "Developed the vertical video reels module with play/pause and interaction controls",

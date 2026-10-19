@@ -27,8 +27,8 @@ export default function Hero() {
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-textPrimary leading-[1.1] mb-6">
-              {personal.headlineLine1}{" "}
-              <span className="text-gradient-orange block sm:inline">
+              <span className="block">{personal.headlineLine1}</span>
+              <span className="text-gradient-orange block mt-2 sm:mt-3">
                 {personal.headlineLine2}
               </span>
             </h1>
